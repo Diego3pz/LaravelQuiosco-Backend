@@ -38,7 +38,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->disponible= 0;
+        $product->save();
+        return [
+            'message' => 'Producto agotado correctamente',
+            'product' => $product
+        ];
     }
 
     /**
